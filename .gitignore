@@ -1,0 +1,35 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Model (too large for GitHub - download from Drive)
+model/*.h5
+model/*.keras
+
+# Environment variables (contains secrets)
+.env
+
+# Uploads (user data)
+static/uploads/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Database files (sensitive)
+*.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

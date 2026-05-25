@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="card" style="max-width: 700px; margin: 0 auto; text-align: center;">
+    <h2>Résultat de l'Analyse</h2>
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 1.5rem 0;">
+
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center;">
+        <div style="flex: 1; min-width: 250px;">
+            <img src="{{ img }}" alt="Lésion analysée" class="prediction-img">
+        </div>
+
+        <div style="flex: 1; min-width: 250px; text-align: left;">
+            <p><strong>Diagnostic suggéré :</strong></p>
+            <span class="result-badge badge-{{ 'malignant' if result == 'Malignant' else 'benign' }}" style="font-size: 1.5rem; padding: 0.5rem 1.5rem;">
+                {{ 'MALIN' if result == 'Malignant' else 'BÉNIN' }}
+            </span>
+
+            <div class="prob-container">
+                <p>Confiance de l'IA : <strong>{{ prob }}%</strong></p>
+                <div class="prob-bar">
+                    <div class="prob-fill" style="width: {{ prob }}%; background-color: {{ '#e74c3c' if result == 'Malignant' else '#27ae60' }}"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <p style="font-size: 0.85rem; color: #777;">
+                    <em>Avertissement : Ce résultat est généré par un algorithme. Il doit être validé par un dermatologue certifié.</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+        <a href="/predict" class="btn btn-primary">Nouvelle Analyse</a>
+        <a href="/patients" class="btn" style="border: 1px solid #ddd; margin-left: 1rem;">Voir l'Historique</a>
+    </div>
+</div>
+{% endblock %}

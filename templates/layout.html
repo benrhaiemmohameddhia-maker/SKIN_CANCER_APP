@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermScan AI - Détection Cancer de la Peau</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% if session.get('user') %}
+    <nav class="navbar">
+        <div class="nav-brand">
+            <strong>DermScan AI</strong>
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard">Tableau de bord</a>
+            <a href="/predict">Nouvelle Analyse</a>
+            <a href="/patients">Historique</a>
+            <a href="/logout" style="color: var(--accent-color)">Déconnexion</a>
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer style="text-align: center; margin-top: 3rem; color: #888; font-size: 0.9rem; padding-bottom: 2rem;">
+        &copy; 2026 DermScan AI. Outil d'aide au diagnostic basé sur l'IA.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="header-section" style="margin-bottom: 2rem;">
+    <h1>Bienvenue, {{ session['user'] }}</h1>
+    <p>Système de détection précoce du mélanome par intelligence artificielle.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    <div class="card">
+        <h3>Nouvelle Analyse</h3>
+        <p>Téléchargez une image dermoscopique pour obtenir un diagnostic instantané.</p>
+        <a href="/predict" class="btn btn-primary">Lancer l'analyse</a>
+    </div>
+
+    <div class="card">
+        <h3>Historique Patients</h3>
+        <p>Consultez la liste des analyses précédentes et les rapports de diagnostic.</p>
+        <a href="/patients" class="btn btn-primary">Voir l'historique</a>
+    </div>
+</div>
+
+<div class="card" style="margin-top: 2rem;">
+    <h3>Statistiques Rapides</h3>
+    <p>Les outils de DermScan AI aident à réduire le temps de diagnostic de 40%.</p>
+</div>
+{% endblock %}
