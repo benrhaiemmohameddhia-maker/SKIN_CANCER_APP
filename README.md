@@ -153,11 +153,11 @@ Le modèle est basé sur l'architecture **VGG16**, optimisée par **Transfer Lea
 Voici les résultats obtenus après l'entraînement du modèle :
 
 #### 📈 Courbes d'Entraînement
-![Model Curves](screenshots/model result.png)
+![Model Curves](screenshots/model_result.png)
 > Évolution de la précision et de la perte sur 100 époques.
 
 #### 🎛️ Matrice de Confusion
-![Confusion Matrix](screenshots/confusion matrix.png)
+![Confusion Matrix](screenshots/confusion_matrix.png)
 > Matrice de confusion montrant la performance de classification (Bénin vs Malin).
 
 ---
