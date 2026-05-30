@@ -36,6 +36,10 @@
 ![Result Page](screenshots/04_result.png)
 > Rapport généré par l'IA avec score de confiance en temps réel.
 
+### 5. Rapport de Diagnostic PDF
+![Report Page](screenshots/report.png)
+> Rapport de diagnostic complet exportable pour le patient.
+
 ---
 
 ## 🏗️ Architecture du Projet
@@ -137,14 +141,24 @@ Accédez à : [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 🤖 Modèle IA — VGG16
+## 🧠 Le Modèle & Résultats
 
-Le modèle est basé sur l'architecture **VGG16** pré-entraînée sur ImageNet, fine-tunée sur un dataset de lésions dermatoscopiques.
+### Architecture VGG16
+Le modèle est basé sur l'architecture **VGG16**, optimisée par **Transfer Learning**. Il analyse les caractéristiques morphologiques des lésions pour fournir un diagnostic de précision.
 
-- **Architecture** : VGG16 + couches de classification personnalisées
-- **Entrée** : Images 224×224 pixels
-- **Sortie** : Probabilité Bénin / Malin
-- **Précision** : >90% sur le jeu de test
+- **Entrée** : Images 224x224 pixels.
+- **Sortie** : Classification (Bénin / Malin) avec score de confiance.
+
+### 📊 Performances Réelles
+Voici les résultats obtenus après l'entraînement du modèle :
+
+#### 📈 Courbes d'Entraînement
+![Model Curves](screenshots/model result.png)
+> Évolution de la précision et de la perte sur 100 époques.
+
+#### 🎛️ Matrice de Confusion
+![Confusion Matrix](screenshots/confusion matrix.png)
+> Matrice de confusion montrant la performance de classification (Bénin vs Malin).
 
 ---
 
